@@ -1,0 +1,47 @@
+{"frames": {
+
+"bolt1.png":
+{
+	"frame": {"x":0,"y":0,"w":48,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":32},
+	"sourceSize": {"w":48,"h":32}
+},
+"bolt2.png":
+{
+	"frame": {"x":48,"y":0,"w":48,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":32},
+	"sourceSize": {"w":48,"h":32}
+},
+"bolt3.png":
+{
+	"frame": {"x":96,"y":0,"w":48,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":32},
+	"sourceSize": {"w":48,"h":32}
+},
+"bolt4.png":
+{
+	"frame": {"x":144,"y":0,"w":48,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":32},
+	"sourceSize": {"w":48,"h":32}
+}},
+"animations": {
+	"bolt": ["bolt1.png","bolt2.png","bolt3.png","bolt4.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "bolt.png",
+	"format": "RGBA8888",
+	"size": {"w":192,"h":32},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:4580cd1571653ba7c2d5280656d41723:b1f769bc30c473110d8567e489d2c7b2:786b18d6ac2995fbc971063b92f61e24$"
+}
+}

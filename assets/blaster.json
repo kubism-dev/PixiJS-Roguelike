@@ -1,0 +1,20 @@
+{"frames": {
+
+"blaster_light.png":
+{
+	"frame": {"x":0,"y":0,"w":128,"h":384},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":384},
+	"sourceSize": {"w":128,"h":384}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "blaster.png",
+	"format": "RGBA8888",
+	"size": {"w":128,"h":384},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:49800abc28b9744009c144ac97f3c31b:b7669de10bd52e97c19dee36570f5be9:79b4100dd02c7318e75325b52575520d$"
+}
+}

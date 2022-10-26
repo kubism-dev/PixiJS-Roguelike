@@ -1,0 +1,47 @@
+{"frames": {
+
+"waveform1.png":
+{
+	"frame": {"x":0,"y":0,"w":95,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":95,"h":32},
+	"sourceSize": {"w":95,"h":32}
+},
+"waveform2.png":
+{
+	"frame": {"x":95,"y":0,"w":95,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":95,"h":32},
+	"sourceSize": {"w":95,"h":32}
+},
+"waveform3.png":
+{
+	"frame": {"x":190,"y":0,"w":95,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":95,"h":32},
+	"sourceSize": {"w":95,"h":32}
+},
+"waveform4.png":
+{
+	"frame": {"x":285,"y":0,"w":95,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":95,"h":32},
+	"sourceSize": {"w":95,"h":32}
+}},
+"animations": {
+	"waveform": ["waveform1.png","waveform2.png","waveform3.png","waveform4.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "waveform.png",
+	"format": "RGBA8888",
+	"size": {"w":380,"h":32},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:e5d01e97d54e1afc1c14bec1ece8bc96:07aeb38542b2fc45f23011449928c794:9a7e32a1938455f5e9585ac938a30eb0$"
+}
+}

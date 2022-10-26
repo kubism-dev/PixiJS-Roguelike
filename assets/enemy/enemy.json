@@ -1,0 +1,87 @@
+{"frames": {
+
+"enemy000.png":
+{
+	"frame": {"x":0,"y":0,"w":119,"h":124},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":119,"h":124},
+	"sourceSize": {"w":119,"h":124}
+},
+"enemy001.png":
+{
+	"frame": {"x":119,"y":0,"w":119,"h":124},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":119,"h":124},
+	"sourceSize": {"w":119,"h":124}
+},
+"enemy002.png":
+{
+	"frame": {"x":238,"y":0,"w":119,"h":124},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":119,"h":124},
+	"sourceSize": {"w":119,"h":124}
+},
+"enemy003.png":
+{
+	"frame": {"x":357,"y":0,"w":119,"h":124},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":119,"h":124},
+	"sourceSize": {"w":119,"h":124}
+},
+"enemy004.png":
+{
+	"frame": {"x":476,"y":0,"w":119,"h":124},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":119,"h":124},
+	"sourceSize": {"w":119,"h":124}
+},
+"enemy005.png":
+{
+	"frame": {"x":595,"y":0,"w":119,"h":124},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":119,"h":124},
+	"sourceSize": {"w":119,"h":124}
+},
+"enemy006.png":
+{
+	"frame": {"x":714,"y":0,"w":119,"h":124},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":119,"h":124},
+	"sourceSize": {"w":119,"h":124}
+},
+"enemy007.png":
+{
+	"frame": {"x":833,"y":0,"w":119,"h":124},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":119,"h":124},
+	"sourceSize": {"w":119,"h":124}
+},
+"enemy008.png":
+{
+	"frame": {"x":952,"y":0,"w":119,"h":124},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":119,"h":124},
+	"sourceSize": {"w":119,"h":124}
+}},
+"animations": {
+	"enemy": ["enemy000.png","enemy001.png","enemy002.png","enemy003.png","enemy004.png","enemy005.png","enemy006.png","enemy007.png","enemy008.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "enemy.png",
+	"format": "RGBA8888",
+	"size": {"w":1071,"h":124},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:f2b7d39d0f14dc1a13a395e01f2e6de8:7f47e35a2065fe75bf3b6ef8730532cb:a99356c10d69482e9bee53d25c3d05e1$"
+}
+}
