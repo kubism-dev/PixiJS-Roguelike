@@ -39038,30 +39038,36 @@
     }
 
   const bullets = [];
-  let bullet;
-  let weaponSprite;
-  class Weapon {
-    constructor() {
-    }
+  let bullet, weaponSprite;
 
-    set load(x) {
-      weaponSprite = x;
+  class Weapon {
+    set load(spriteObject) {
+      weaponSprite = spriteObject;
     }
 
     updateProjectiles() {
-        return bullets;
+      return bullets;
     }
-    async shoot(rotation, startPosition, stage) {
-      bullet = new AnimatedSprite(
-        weaponSprite.bolt.spritesheet.animations["bolt"]
-      );
-      bullet.play();
-      bullet.animationSpeed = 0.25;
-      bullet.anchor.x = .8;
-      bullet.anchor.y = 0;
-      bullet.position.x = startPosition.x;
-      bullet.position.y = startPosition.y;
-      bullet.rotation = rotation;
+
+    shoot(rotation, startPosition, stage) {
+      let types = Math.round(Math.random() * 2)
+        ? new AnimatedSprite(weaponSprite.bolt.spritesheet.animations['bolt'])
+        : new AnimatedSprite(
+            weaponSprite.waveform.spritesheet.animations['waveform']
+          );
+      bullet = types;
+      Object.assign(bullet, {
+        animationSpeed: 0.25,
+        anchor: {
+          x: 0.8,
+          y: 0
+        },
+        position: {
+          x: startPosition.x,
+          y: startPosition.y
+        },
+        rotation
+      }).play();
       stage.stage.addChild(bullet);
       bullets.push(bullet);
     }
@@ -49848,7 +49854,8 @@ ${e}`);
       this.playerObject.rotationAttack;
       this.speed = 0.5;
       this.currentAnim = 'walk';
-        this.weapon = new Weapon();
+      this.weapon = new Weapon();
+      
       window.addEventListener('keydown', (e) => this.onKeyDown(e), true);
       window.addEventListener('keyup', (e) => this.onKeyUp(e));
       window.addEventListener('mousedown', (e) => this.onMouseDown(e));
@@ -49957,29 +49964,30 @@ ${e}`);
 
   class Enemy {
       constructor(sprite, x, y) {
-          this.spriteRessources = sprite;
           this.enemyObject = new AnimatedSprite(
             sprite.enemy.spritesheet.animations['enemy']
           );
-          this.enemyObject.animationSpeed = 0.15;
-          this.enemyObject.play();
-          this.enemyObject.health = 100;
-          this.enemyObject.x = x;
-          this.enemyObject.y = y;
-          this.enemyObject.tint = 0xFFFFFF;
+          Object.assign(this.enemyObject, {
+              animationSpeed: 0.15,
+              health: 100,
+              x: x,
+              y: y,
+              tint: 0xFFFFFF,
+          }).play();
       }
 
       update(player) {
+          let { x, y } = this.enemyObject;
           function lerp (start, end, amt){
               return (1-amt)*start+amt*end
           }
-          this.enemyObject.x = lerp(this.enemyObject.x, player.x, 0.004);
-          this.enemyObject.y = lerp(this.enemyObject.y, player.y, 0.004);
+          this.enemyObject.x = lerp(x, player.x - 100, 0.004);
+          this.enemyObject.y = lerp(y, player.y - 100, 0.004);
       }
   }
 
   class GameLoader {
-      constructor(game) {
+      constructor() {
           this.loader = new Loader$1();
           this.loader.add('shoot', 'assets/run/run.json')
               .add('attack', 'assets/attack/attack.json')
@@ -49996,7 +50004,7 @@ ${e}`);
   }
 
   const enemies = [];
-  let score; 
+  let score;
   class Game {
       constructor() {
           this.pixi = new Application({
@@ -50010,29 +50018,39 @@ ${e}`);
           this.hitDetection = new Bump(this.pixi);
 
           const defaultIcon = "url('assets/cursor/crosshair.png'),auto";
-          
+
           this.pixi.renderer.plugins.interaction.cursorStyles.default = defaultIcon;
-          
+
           document.body.appendChild(this.pixi.view);
+
           const loader = new GameLoader(this.pixi);
+
           loader.load((loader, resources) => this.doneLoading(loader, resources));
           const text = new Text('W A S D, E = Shoot, Mouse = Fight', {
               fontFamily: 'Arial',
               fontSize: 16,
               fill: 0x000000,
+              outline: 0xFFF0000,
               align: 'center',
           });
+
           text.x = 30;
+
           text.y = this.pixi.renderer.height - 50;
+
           this.pixi.stage.addChild(text);
+
           score = new Text('Kills:', {
               fontFamily: 'Arial',
               fontSize: 16,
               fill: 0x000000,
               align: 'center',
           });
+
           score.x = this.pixi.renderer.width / 2;
+
           score.y = this.pixi.renderer.height - 50;
+          
           this.pixi.stage.addChild(score);
       }
 
@@ -50083,7 +50101,7 @@ ${e}`);
               this.pixi.stage.addChild(sprite5);
           }
 
-          this.weapon = new Weapon();
+          this.weapon = new Weapon(resources);
           this.weapon.load = resources;
 
           this.pixi.ticker.maxFPS = 60;
@@ -50115,12 +50133,12 @@ ${e}`);
                           enemies[k].enemyObject.blendMode = 1;
                           enemies.splice(k, 1);
                           score.text += '+';
-                      setInterval(() => {
-                          enemies[k].enemyObject.blendMode = 0;
-                          enemies[k].enemyObject.tint = 0xFFFFFF;
-                      }, 10);
+                          setInterval(() => {
+                              enemies[k].enemyObject.blendMode = 0;
+                              enemies[k].enemyObject.tint = 0xFFFFFF;
+                          }, 10);
+                      }
                   }
-                  }   
               }
           }
       }
